@@ -1,6 +1,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import Combine
 
 @MainActor
 class NoteViewModel: ObservableObject {

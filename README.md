@@ -16,9 +16,9 @@ to **Cloud Firestore** in real time.
 
 ## Screenshots
 
-| Login | My Plans | New Plan |
-|:---:|:---:|:---:|
-| <img src="screenshots/login.png" width="220"> | <img src="screenshots/plans.png" width="220"> | <img src="screenshots/add-plan.png" width="220"> |
+| Login | Sign Up | My Plans | New Plan |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshots/login.png" width="200"> | <img src="screenshots/signup.png" width="200"> | <img src="screenshots/plans.png" width="200"> | <img src="screenshots/add-plan.png" width="200"> |
 
 | Firebase Authentication | Firestore Data |
 |:---:|:---:|
@@ -48,14 +48,16 @@ to **Cloud Firestore** in real time.
 
 ```
 TodoFirebase/
-├── TodoFirebaseApp.swift   // App entry, FirebaseApp.configure()
-├── Models.swift            // TaskItem, Note
-├── AuthViewModel.swift     // Sign up, log in, log out
-├── NoteViewModel.swift     // Firestore create / read / update / delete
-├── ContentView.swift       // Login or NoteView depending on auth state
-├── LoginView.swift         // Login & sign-up screen
-├── NoteView.swift          // All plans under headings + CheckboxRow
-└── AddNoteView.swift       // Create a new plan
+├── TodoFirebase.xcodeproj
+└── TodoFirebase/
+    ├── TodoFirebaseApp.swift   // App entry, FirebaseApp.configure()
+    ├── Models.swift            // TaskItem, Note
+    ├── AuthViewModel.swift     // Sign up, log in, log out
+    ├── NoteViewModel.swift     // Firestore create / read / update / delete
+    ├── ContentView.swift       // Login or NoteView depending on auth state
+    ├── LoginView.swift         // Login & sign-up screen
+    ├── NoteView.swift          // All plans under headings + CheckboxRow
+    └── AddNoteView.swift       // Create a new plan
 ```
 
 ## Firestore Data Structure
@@ -72,7 +74,7 @@ users (collection)
 
 ## How to Run
 
-Requirements: a Mac with Xcode, and a Firebase project.
+Requirements: a Mac with Xcode 26 (iOS 26.5 simulator or newer), and a Firebase project.
 
 1. **Firebase Console**
    - Create a project and add an iOS app with bundle ID `com.zaina.TodoFirebase`
@@ -81,8 +83,8 @@ Requirements: a Mac with Xcode, and a Firebase project.
    - Authentication → Sign-in method → enable **Email/Password**.
    - Firestore Database → Create database.
 2. **Xcode**
-   - Open `TodoFirebase.xcodeproj`.
-   - Drag `GoogleService-Info.plist` into the `TodoFirebase` folder (tick *Copy items if needed* and the app target).
+   - Open `TodoFirebase/TodoFirebase.xcodeproj`.
+   - Drag `GoogleService-Info.plist` into the `TodoFirebase/TodoFirebase` folder (tick *Copy items if needed* and the app target).
      This file is not included in the repo.
    - Packages are resolved automatically (`firebase-ios-sdk`: FirebaseAuth, FirebaseFirestore).
    - Select an iPhone simulator and press **Run** (⌘R).
